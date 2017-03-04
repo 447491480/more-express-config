@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/447491480/more-express-config#readme",
   "dependencies": {
-    "chalk": "^1.1.3",
     "js-yaml": "^3.8.2",
     "merge-descriptors": "^1.0.1",
     "resolve": "^1.3.2"
