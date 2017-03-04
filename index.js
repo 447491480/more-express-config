@@ -28,6 +28,15 @@ function loadConfig(filename) {
     }
 }
 
+function fsExistsSync(path) {
+    try{
+        fs.accessSync(path,fs.F_OK);
+    }catch(e){
+        return false;
+    }
+    return true;
+}
+
 
 module.exports = {
     get: function (configName) {
@@ -41,7 +50,9 @@ module.exports = {
         }
 
         try {
-            _config = merge(loadConfig(path.join(BASEDIR,CONFIG_DIR,G_ENV,configName)),_config, false);
+            if(fsExistsSync(path.join(BASEDIR,CONFIG_DIR,G_ENV,configName))) {
+                _config = merge(loadConfig(path.join(BASEDIR,CONFIG_DIR,G_ENV,configName)),_config, false);
+            }
         } catch (e) {
             console.error(chalk.red('config-lite load `default` failed'));
             console.error(chalk.red(e.stack));

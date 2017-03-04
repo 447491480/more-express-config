@@ -1,6 +1,6 @@
 {
   "name": "more-express-config",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "read config by env path",
   "main": "index.js",
   "scripts": {
