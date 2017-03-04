@@ -34,17 +34,20 @@ module.exports = {
         var _config = null;
         try {
             _config = loadConfig(configName);
+
         } catch (e) {
             console.error(chalk.red('config-env load `' + configName + '` failed'));
             console.error(chalk.red(e.stack));
         }
 
         try {
-            _config = merge(_config,loadConfig(path.join(BASEDIR,CONFIG_DIR,G_ENV,configName)), false);
+            _config = merge(loadConfig(path.join(BASEDIR,CONFIG_DIR,G_ENV,configName)),_config, false);
         } catch (e) {
             console.error(chalk.red('config-lite load `default` failed'));
             console.error(chalk.red(e.stack));
         }
+
+        return _config;
     }
 };
 
