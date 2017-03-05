@@ -1,4 +1,4 @@
-## more friendly way to use config file when you have many env,let the env config to merge default config
+## A more friendly way to use config file when you have many env,let the env config to merge default config
 
 ```
 npm i more-express-config --save
