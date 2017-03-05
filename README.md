@@ -1,4 +1,4 @@
-## more friendly way to use config file when you has many env,let the env config to merge default config
+## more friendly way to use config file when you have many env,let the env config to merge default config
 
 ```
 npm i more-express-config --save
@@ -18,13 +18,13 @@ npm i more-express-config --save
 }
 ```
 
-####NODE_ENV=test node app.js
+#### app.js
 ```
 var configure = require('more-express-config');
 
 console.log(configure.get('app'));
 ```
-
+#### NODE_ENV=test node app.js
 #### output
 ```
 {
